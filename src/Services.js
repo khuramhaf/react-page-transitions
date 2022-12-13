@@ -26,7 +26,7 @@ const [state, setstate]=useState("navstart")
                else{
             }
     
-           }, 50)
+           }, 0)
 
            return ()=>{
             clearTimeout(timer)

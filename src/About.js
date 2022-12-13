@@ -10,6 +10,8 @@ function About(props) {
 
     const [state, setstate] =useState("navstart")
 
+ 
+
     useEffect(()=>{
   const timer=      setTimeout(()=>{
 
@@ -26,7 +28,7 @@ function About(props) {
                else{
             }
     
-           }, 50)
+           }, 0)
 
            return ()=>{
             clearTimeout(timer)
@@ -34,6 +36,8 @@ function About(props) {
      })
 
     return ( 
+
+        
 <div className={state}>
 <div className="home">
 
@@ -53,6 +57,9 @@ Contact us @ contact@musk-technology.com
 
 </div>
 </div>
+
+
+
      );
 }
 

@@ -1,11 +1,10 @@
 .navstart{
 
-  margin-left:-50px;
-  transition: margin-left ease 15s;
+  margin-left:-550px;
 }
 
 .navend{
-  margin-left:50%;
+  margin-left:35%;
   transition: margin-left ease 1s;
 }
 

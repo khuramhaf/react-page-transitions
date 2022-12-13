@@ -26,7 +26,7 @@ function Contact(props) {
                else{
             }
     
-           }, 50)
+           }, 0)
 
            return ()=>{
             clearTimeout(timer)

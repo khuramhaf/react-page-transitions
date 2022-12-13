@@ -31,7 +31,7 @@ function Home(props) {
 
        
 
-       }, 50)
+       }, 0)
 
        return ()=>{
         clearTimeout(timer)
