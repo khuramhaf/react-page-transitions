@@ -28,7 +28,7 @@ function About(props) {
                else{
             }
     
-           }, 0)
+           }, 10)
 
            return ()=>{
             clearTimeout(timer)
