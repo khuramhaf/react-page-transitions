@@ -10,35 +10,45 @@ function About(props) {
 
     const [state, setstate] =useState("navstart")
 
- 
-
     useEffect(()=>{
-  const timer=      setTimeout(()=>{
 
-            if (props.state[1]==="navstart"){
-                setstate("navend")
-               }
-        
-               else if(props.state[1]==='navendfull'){
-        
-                setstate("navendfull")
-               }
-        
-        
-               else{
-            }
-    
-           }, 10)
+        if(props.aboutstate==="popstatestart"){
 
-           return ()=>{
-            clearTimeout(timer)
+            props.setaboutstate("popstateend")
+        }
+
+        else{
+
+  const timer =     setTimeout(()=>{
+
+        if (props.aboutstate==="navstart"){
+            props.setaboutstate("navend")
            }
-     })
+    
+           else if(props.state[1]==='navendfull'){
+    
+            props.setaboutstate("navendfull")
+           }
+    
+    
+           else{
+        }
 
+       
+
+       }, 10)
+
+       return ()=>{
+        clearTimeout(timer)
+       }
+    }
+    })
+
+    
     return ( 
 
         
-<div className={state}>
+<div className={props.aboutstate}>
 <div className="home">
 
 <h1 className = "h1">One Stop Shop</h1>

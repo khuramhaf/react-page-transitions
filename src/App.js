@@ -15,21 +15,76 @@ function App() {
 const [navstate, setnavstate] = useState("navstart")
 const [compstate, setcompstate]=useState(array1);
 
+const [homestate, sethomestate] = useState("navstart")
+const [aboutstate, setaboutstate] = useState("navstart")
+const [servicesstate, setservicesstate] = useState("navstart")
+const [contactstate, setcontactstate] = useState("navstart")
+
 useEffect(()=>{
 
 setnavstate("navend")
 })
 
+
+useEffect(()=>{
+
+  window.addEventListener('popstate',()=>{
+
+if (window.location.pathname==='/'){
+
+  sethomestate("popstatestart");
+
+  var array2= [false, "navstart", "navstart", "navstart"]
+
+  setcompstate(array2)
+}
+
+else if (window.location.pathname==='/about'){
+
+  setaboutstate("popstatestart");
+
+  var array2= ["navstart", false, "navstart", "navstart"]
+
+  setcompstate(array2)
+}
+
+else if (window.location.pathname==='/services'){
+
+  setservicesstate("popstatestart");
+
+  var array2= ["navstart", "navstart", false, "navstart"]
+
+  setcompstate(array2)
+}
+
+else if (window.location.pathname==='/contact'){
+
+  setcontactstate("popstatestart");
+
+  var array2= ["navstart", "navstart", "navstart", false]
+
+  setcompstate(array2)
+}
+
+else {
+
+}
+  }
+  
+  
+  )
+}, [])
+
   return (
 <div>
     <div className={navstate}>
-<Nav state={compstate} setstate={setcompstate}/>
+<Nav servicesstate={servicesstate} setservicesstate={setservicesstate} contactstate={contactstate} setcontactstate={setcontactstate} aboutstate={aboutstate} setaboutstate={setaboutstate} homestate={homestate} sethomestate={sethomestate} state={compstate} setstate={setcompstate}/>
 </div>
 <Routes>
-<Route path='/' element={<Home state={compstate} setstate={setcompstate}/>}></Route>
-<Route path='/about' element={<About state={compstate} setstate={setcompstate}/>}></Route>
-<Route path='/services' element={<Services state={compstate} setstate={setcompstate}/>}></Route>
-<Route path='/contact' element={<Contact state={compstate} setstate={setcompstate}/>}></Route>
+<Route path='/' element={<Home homestate={homestate} sethomestate={sethomestate} state={compstate} setstate={setcompstate}/>}></Route>
+<Route path='/about' element={<About aboutstate={aboutstate} setaboutstate={setaboutstate} state={compstate} setstate={setcompstate}/>}></Route>
+<Route path='/services' element={<Services servicesstate={servicesstate} setservicesstate={setservicesstate} state={compstate} setstate={setcompstate}/>}></Route>
+<Route path='/contact' element={<Contact contactstate={contactstate} setcontactstate={setcontactstate} state={compstate} setstate={setcompstate}/>}></Route>
 
 </Routes>
 </div>

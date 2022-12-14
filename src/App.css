@@ -13,6 +13,15 @@
   transition: margin-left ease 1s;
 }
 
+.popstatestart{
+  margin-left:100%;
+}
+
+.popstateend{
+  margin-left:35%;
+  transition: margin-left ease 1s;
+}
+
 .navbutton{
   padding-top:30px;
   padding-right:30px;

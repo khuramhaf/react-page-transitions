@@ -13,11 +13,10 @@ function myfun1(e){
 e.preventDefault();
 setTimeout(()=>{
     navigate('/')
-    var array1= ["navstart", "navstart", "navstart", "navstart"]
-props.setstate(array1);
+props.sethomestate("navstart");
 }, 1000)
 
-var array1= ["navendfull", "navendfull", "navendfull", "navendfull"]
+var array1= [false, "navendfull", "navendfull", "navendfull"]
 props.setstate(array1);
 }
 
@@ -27,11 +26,10 @@ function myfun2(e){
 
     setTimeout(()=>{
         navigate('/about')
-        var array1= ["navstart", "navstart", "navstart", "navstart"]
-    props.setstate(array1);
+        props.setaboutstate("navstart");
     }, 1000)
 
-    var array1= ["navendfull", "navendfull", "navendfull", "navendfull"]
+    var array1= ["navendfull", false, "navendfull", "navendfull"]
     props.setstate(array1);
     
 }
@@ -41,11 +39,10 @@ function myfun3(e){
     e.preventDefault();
     setTimeout(()=>{
         navigate('/services')
-        var array1= ["navstart", "navstart", "navstart", "navstart"]
-    props.setstate(array1);
+        props.setservicesstate("navstart");
     }, 1000)
     
-    var array1= ["navendfull", "navendfull", "navendfull", "navendfull"]
+    var array1= ["navendfull", "navendfull", false, "navendfull"]
     props.setstate(array1);
 }
 
@@ -54,11 +51,10 @@ function myfun4(e){
     e.preventDefault();
     setTimeout(()=>{
     navigate('/contact')
-    var array1= ["navstart", "navstart", "navstart", "navstart"]
-props.setstate(array1);
+    props.setcontactstate("navstart");
 }, 1000)
 
-var array1= ["navendfull", "navendfull", "navendfull", "navendfull"]
+var array1= ["navendfull", "navendfull", "navendfull", false]
 props.setstate(array1);
 }
 

@@ -10,30 +10,41 @@ function Services(props) {
 const [state, setstate]=useState("navstart")
 
 
-    useEffect(()=>{
-     const timer =   setTimeout(()=>{
+useEffect(()=>{
 
-            if (props.state[2]==="navstart"){
-                setstate("navend")
-               }
-        
-               else if(props.state[2]==='navendfull'){
-        
-                setstate("navendfull")
-               }
-        
-        
-               else{
-            }
-    
-           }, 10)
+    if(props.servicesstate==="popstatestart"){
 
-           return ()=>{
-            clearTimeout(timer)
-           }
-     })
+        props.setservicesstate("popstateend")
+    }
+
+    else{
+
+const timer =     setTimeout(()=>{
+
+    if (props.servicesstate==="navstart"){
+        props.setservicesstate("navend")
+       }
+
+       else if(props.state[2]==='navendfull'){
+
+        props.setservicesstate("navendfull")
+       }
+
+
+       else{
+    }
+
+   
+
+   }, 10)
+
+   return ()=>{
+    clearTimeout(timer)
+   }
+}
+})
     return ( 
-<div className={state}>
+<div className={props.servicesstate}>
 <div className="home">
 
 <h1 className = "h1">Our Services</h1>

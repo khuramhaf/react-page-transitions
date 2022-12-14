@@ -9,31 +9,42 @@ import {useState, useEffect} from 'react'
 function Contact(props) {
 
     const [state,setstate]= useState("navstart")
-
     useEffect(()=>{
-    const timer=    setTimeout(()=>{
 
-            if (props.state[3]==="navstart"){
-                setstate("navend")
-               }
-        
-               else if(props.state[3]==='navendfull'){
-        
-                setstate("navendfull")
-               }
-        
-        
-               else{
-            }
-    
-           }, 10)
+        if(props.contactstate==="popstatestart"){
 
-           return ()=>{
-            clearTimeout(timer)
+            props.setcontactstate("popstateend")
+        }
+
+        else{
+
+  const timer =     setTimeout(()=>{
+
+        if (props.contactstate==="navstart"){
+            props.setcontactstate("navend")
            }
-     })
+    
+           else if(props.state[3]==='navendfull'){
+    
+            props.setcontactstate("navendfull")
+           }
+    
+    
+           else{
+        }
+
+       
+
+       }, 10)
+
+       return ()=>{
+        clearTimeout(timer)
+       }
+    }
+    })
+   
     return ( 
-<div className={state}>
+<div className={props.contactstate}>
 <div className="home">
 
 <h1 className = "h1" >Contact Us</h1>

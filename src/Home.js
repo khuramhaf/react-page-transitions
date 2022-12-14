@@ -8,21 +8,24 @@ import {useState, useEffect} from 'react'
 
 function Home(props) {
 
-    const [state, setstate] =useState("navstart")
-
-    
-
     useEffect(()=>{
+
+        if(props.homestate==="popstatestart"){
+
+            props.sethomestate("popstateend")
+        }
+
+        else{
 
   const timer =     setTimeout(()=>{
 
-        if (props.state[0]==="navstart"){
-            setstate("navend")
+        if (props.homestate==="navstart"){
+            props.sethomestate("navend")
            }
     
            else if(props.state[0]==='navendfull'){
     
-            setstate("navendfull")
+            props.sethomestate("navendfull")
            }
     
     
@@ -36,15 +39,14 @@ function Home(props) {
        return ()=>{
         clearTimeout(timer)
        }
-        
-   
+    }
     })
 
 
 
     return ( 
 
-        <div className={state}>
+        <div className={props.homestate}>
 
 <div className="home">
 
