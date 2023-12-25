@@ -5,4 +5,6 @@ If you want to change the amination on the page transistion just go in App.css a
 
 on popstate branch  When the new component slides in from the left the previous component slides out from the right, when the browser's back button is clicked the component slides in from the right.
 
-Looking forward to develop a professional project like this or any other. Contact me at contact@musk-technology.com
+# See Our Latest Video Editor
+https://www.amooiz.com
+
